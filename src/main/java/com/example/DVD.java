@@ -6,9 +6,9 @@ import com.jcon_engine.objects2D.Square2D;
 
 public class DVD extends JconInstance{
     char[][] logo = {
-        {'◢','█','█','█','◣'},
-        {'█','D','V','D','█'},
-        {'◥','█','█','█','◤'}
+        {'/','⎺','⎺','⎺','\\'},
+        {'⎸','D','V','D','⎹'},
+        {'\\','⎽','⎽','⎽','/'}
     };
     CharMap2D dvdLogo = new CharMap2D(logo);
     boolean dirX=true, dirY=true;

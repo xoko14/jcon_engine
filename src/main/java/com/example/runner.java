@@ -6,6 +6,7 @@ public class runner {
     private static JconInstance shapes = new Shapes();
     private static JconInstance dvd = new DVD();
     public static void main(String[] args) {
+        shapes.run();
         dvd.run();
     }
 }
