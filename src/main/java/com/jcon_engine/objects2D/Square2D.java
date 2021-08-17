@@ -11,7 +11,7 @@ public class Square2D extends Object2D {
     }
 
     public char[][] getShape() {
-        shape = new char[y][x];
+        shape = new char[height][width];
         for (int i = 0; i < shape.length; i++) {
             for (int j = 0; j < shape[i].length; j++) {
                 shape[i][j] = filler;

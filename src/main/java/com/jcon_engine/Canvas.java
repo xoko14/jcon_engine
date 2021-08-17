@@ -26,8 +26,8 @@ public class Canvas {
 
         for (Object2D object : shapes) {
             currentObj = object.getShape();
-            for(int i=0;i<object.height;i++){
-                for(int j=0;j<object.width;j++){
+            for(int i=0;i<currentObj.length;i++){
+                for(int j=0;j<currentObj[i].length;j++){
                     canvas[object.y+i][object.x+j] = currentObj[i][j];
                 }
             }
@@ -42,6 +42,14 @@ public class Canvas {
 
     public void addObj(Object2D obj){
         shapes.add(obj);
+    }
+
+    public void clear(char background){
+        for (int i = 0; i < canvas.length; i++) {
+            for (int j = 0; j < canvas[i].length; j++) {
+                canvas[i][j]=background;
+            }
+        }
     }
 
     
