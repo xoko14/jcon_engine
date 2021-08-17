@@ -1,7 +1,7 @@
 package com.jcon_engine.objects2D;
 
 public abstract class Object2D {
-    public int drawOrder;
+    public int drawOrder = 0;
     public int x;
     public int y;
     public int width;

@@ -28,7 +28,7 @@ public class Canvas {
             currentObj = object.getShape();
             for(int i=0;i<currentObj.length;i++){
                 for(int j=0;j<currentObj[i].length;j++){
-                    canvas[object.y+i][object.x+j] = currentObj[i][j];
+                    if((object.y+i<=y-1 && object.y+i>=0) && (object.x+j<=x-1 && object.x+j>=0)) canvas[object.y+i][object.x+j] = currentObj[i][j];
                 }
             }
         }
