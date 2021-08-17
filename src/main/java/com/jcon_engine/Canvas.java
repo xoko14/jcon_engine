@@ -1,11 +1,14 @@
 package com.jcon_engine;
 
 import com.jcon_engine.objects2D.Object2D;
+import com.jcon_engine.objects2D.Object2DComparator;
+
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Canvas {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
     private ArrayList<Object2D> shapes;
     private char[][] canvas;
 
@@ -13,10 +16,32 @@ public class Canvas {
         this.x = x;
         this.y = y;
         shapes = new ArrayList<>();
+        canvas = new char[y][x];
     }
 
     public char[][] getCanvas(){
+        char[][] currentObj;
+
+        orderObjects();
+
+        for (Object2D object : shapes) {
+            currentObj = object.getShape();
+            for(int i=0;i<object.height;i++){
+                for(int j=0;j<object.width;j++){
+                    canvas[object.y+i][object.x+j] = currentObj[i][j];
+                }
+            }
+        }
+
         return canvas;
+    }
+
+    private void orderObjects(){
+        Collections.sort(shapes, new Object2DComparator());
+    }
+
+    public void addObj(Object2D obj){
+        shapes.add(obj);
     }
 
     
