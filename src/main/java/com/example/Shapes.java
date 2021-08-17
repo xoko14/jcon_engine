@@ -21,7 +21,7 @@ public class Shapes extends JconInstance {
 
         txt = new Text2D("Hello world wwwwwwwwwwwwwwwwwwwwwwww");
         txt.x = 1;
-        txt.y = 5;
+        txt.y = 3;
         canvas.addObj(txt);
 
     }
@@ -29,9 +29,11 @@ public class Shapes extends JconInstance {
     public void update() {
         if (sq.x + sq.height == canvas.x) {
             dir = false;
+            sq.drawOrder = 1;
         }
         if (sq.x == 0) {
             dir = true;
+            sq.drawOrder=-1;
         }
 
         if (dir) {
