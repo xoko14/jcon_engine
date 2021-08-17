@@ -3,7 +3,7 @@ package com.jcon_engine;
 import java.util.concurrent.locks.LockSupport;
 
 public abstract class JconInstance {
-    private int fps = 30;
+    protected int fps = 30;
     private long time1, time2;
     protected Canvas canvas;
     private boolean run = true;
